@@ -1,0 +1,28 @@
+package wk.controller;
+
+import com.alibaba.fastjson.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import wk.service.UserInfoService;
+
+import java.util.Map;
+
+@RestController
+@RequestMapping(value = "/login")
+public class LoginController {
+
+    @Autowired
+    private UserInfoService userInfoService;
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public Map<String, Object> saveUserInfo(@RequestParam(value = "phone") String phone,@RequestParam(value = "uname") String uname, @RequestParam(value = "regpass") String regpass) {
+        System.out.println(phone+" "+uname+" "+regpass);
+        userInfoService.saveUserInfo(phone,uname,regpass);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", "0");
+        return jsonObject;
+    }
+}
