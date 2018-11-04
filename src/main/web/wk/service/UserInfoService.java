@@ -13,4 +13,8 @@ public class UserInfoService {
     public void saveUserInfo( String phone,String uname,String regpass){
         saveUserInfoMapper.saveUser(phone,uname,regpass);
     }
+
+    public int doLogin(String uname,String regpass){
+        return saveUserInfoMapper.DoLogin(uname,regpass);
+    }
 }
