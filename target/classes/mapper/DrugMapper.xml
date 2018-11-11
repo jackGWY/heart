@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wk.dao.DrugMapper" >
+    <resultMap id="BaseResultMap" type="wk.resp.drugInfoResp" >
+        <id column="a1" property="a1" />
+        <result column="a2" property="a2"  />
+        <result column="a3" property="a3" />
+        <result column="a4" property="a4" />
+        <result column="a5" property="a5" />
+        <result column="a6" property="a6" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+        `a1`, `a2`, `a3`, `a4`, `a5`, `a6`
+    </sql>
+    <select id="getDrugInfoList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from drug_info
+    </select>
+</mapper>
