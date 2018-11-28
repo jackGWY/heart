@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wk.dao.IndexMapper">
+
+    <insert id="saveIndexInfo">
+        replace into IndexInfo(userName,age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slop,ca,thal)
+        values(#{userName}, #{age},#{sex},#{cp},#{trestbps},#{chol},#{fbs},#{restecg},#{thalach},#{exang},#{oldpeak},#{slop},#{ca},#{thal})
+    </insert>
+
+</mapper>
