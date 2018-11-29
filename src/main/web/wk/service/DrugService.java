@@ -15,4 +15,8 @@ public class DrugService {
     public List<drugInfoResp> getDrugInfoList(){
         return drugMapper.getDrugInfoList();
     }
+
+    public drugInfoResp getDrugInfoByA1(String a1){
+        return drugMapper.getDrugInfoByA1(a1);
+    }
 }

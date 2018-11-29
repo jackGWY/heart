@@ -17,4 +17,11 @@
         <include refid="Base_Column_List" />
         from drug_info
     </select>
+
+    <select id="getDrugInfoByA1" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List" />
+        from drug_info
+        WHERE `a1` = #{a1}
+    </select>
 </mapper>
