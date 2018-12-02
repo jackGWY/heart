@@ -3,6 +3,7 @@ package wk.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wk.dao.DrugMapper;
+import wk.entity.News;
 import wk.resp.drugInfoResp;
 
 import java.util.List;
@@ -18,5 +19,9 @@ public class DrugService {
 
     public drugInfoResp getDrugInfoByA1(String a1){
         return drugMapper.getDrugInfoByA1(a1);
+    }
+
+    public List<News> getNews() {
+        return drugMapper.getNews();
     }
 }

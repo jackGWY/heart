@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import wk.entity.News;
 import wk.resp.drugInfoResp;
 import wk.service.DrugService;
 
@@ -26,5 +27,10 @@ public class DrugController {
     @RequestMapping("/getDrugInfoByA1")
     public drugInfoResp getDrugInfoByA1(@RequestParam("a1") String a1) {
         return drugService.getDrugInfoByA1(a1);
+    }
+
+    @RequestMapping("/getNews")
+    public List<News> getNewsList() {
+        return drugService.getNews();
     }
 }
