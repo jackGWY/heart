@@ -7,14 +7,16 @@ public class drugInfoResp {
     private String a4;
     private String a5;
     private String a6;
+    private String a7;
 
-    public drugInfoResp(String a1, String a2, String a3, String a4, String a5, String a6) {
+    public drugInfoResp(String a1, String a2, String a3, String a4, String a5, String a6, String a7) {
         this.a1 = a1;
         this.a2 = a2;
         this.a3 = a3;
         this.a4 = a4;
         this.a5 = a5;
         this.a6 = a6;
+        this.a7 = a7;
     }
 
     public String getA1() {
@@ -63,5 +65,13 @@ public class drugInfoResp {
 
     public void setA6(String a6) {
         this.a6 = a6;
+    }
+
+    public String getA7() {
+        return a7;
+    }
+
+    public void setA7(String a7) {
+        this.a7 = a7;
     }
 }

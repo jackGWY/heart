@@ -8,9 +8,10 @@
         <result column="a4" property="a4" />
         <result column="a5" property="a5" />
         <result column="a6" property="a6" />
+        <result column="a7" property="a7" />
     </resultMap>
     <sql id="Base_Column_List" >
-        `a1`, `a2`, `a3`, `a4`, `a5`, `a6`
+        `a1`, `a2`, `a3`, `a4`, `a5`, `a6`, `a7`
     </sql>
     <select id="getDrugInfoList" resultMap="BaseResultMap">
         select
