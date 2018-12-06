@@ -1,15 +1,21 @@
 package wk.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import wk.entity.News;
+import wk.entity.diary;
 import wk.resp.drugInfoResp;
 import wk.service.DrugService;
 
+import java.sql.Date;
 import java.util.ArrayList;
+
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/drug")
@@ -32,5 +38,21 @@ public class DrugController {
     @RequestMapping("/getNews")
     public List<News> getNewsList() {
         return drugService.getNews();
+    }
+
+    @RequestMapping(value = "/saveDiary",method = RequestMethod.GET)
+    public Map<String, Object> saveDiary(@RequestParam("time") String time, @RequestParam("userName") String userName,
+                                         @RequestParam("reason") String reason, @RequestParam("drugUsed") String drugUsed,
+                                         @RequestParam("hospital") String hospital) {
+
+        drugService.saveDiary(time,reason,drugUsed,hospital,userName);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("result", "0");
+        return jsonObject;
+    }
+
+    @RequestMapping("/getdiaryByUserName")
+    public List<diary> getdiaryByUserName(@RequestParam("userName") String userName) {
+        return drugService.getDiaryListByUserNmae(userName);
     }
 }
