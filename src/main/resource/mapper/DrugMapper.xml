@@ -40,6 +40,13 @@
         from drug_info
         WHERE `a1` = #{a1}
     </select>
+    <select id="getDrugInfoByRandom" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        from drug_info
+        WHERE `a1` LIKE CONCAT('%',#{a1},'%')
+        limit 1
+    </select>
     <select id="getNews" resultMap="NewsResultMap">
         SELECT * from news
     </select>

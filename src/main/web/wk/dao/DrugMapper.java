@@ -12,6 +12,7 @@ import java.util.List;
 public interface DrugMapper {
     List<drugInfoResp> getDrugInfoList();
     drugInfoResp getDrugInfoByA1(@Param("a1") String a1);
+    drugInfoResp getDrugInfoByRandom(@Param("a1") String a1);
     List<News> getNews();
     void saveDiary(@Param("time") String time,@Param("userName") String userNmae,
                    @Param("reason") String reason, @Param("drugUsed") String drugUsed,
