@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="wk.dao.ConsultMapper">
+
+    <resultMap id="BaseResultMap" type="wk.entity.MessageTitle" >
+        <result column="topic_title" property="title"  />
+        <result column="topic_owner" property="owner" />
+    </resultMap>
+    <insert id="saveMessageTitle">
+        replace into topic_title(topic_title,topic_owner)
+        values(#{title}, #{owner})
+    </insert>
+    <sql id="Base_Column_List" >
+        `topic_title`, `topic_owner`
+    </sql>
+    <select id="getMessageTitle" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List" />
+        from topic_title
+    </select>
+
+</mapper>
