@@ -6,6 +6,14 @@
         <result column="topic_title" property="title"  />
         <result column="topic_owner" property="owner" />
     </resultMap>
+
+    <resultMap id="MessageBoardListMap" type="wk.entity.MessageBoard" >
+        <result column="topic_title" property="topicTitle"  />
+        <result column="topic_owner" property="toppicOwner" />
+        <result column="comment" property="comment"  />
+        <result column="comment_owner" property="commentOwner" />
+    </resultMap>
+
     <insert id="saveMessageTitle">
         replace into topic_title(topic_title,topic_owner)
         values(#{title}, #{owner})
@@ -17,6 +25,17 @@
         select
         <include refid="Base_Column_List" />
         from topic_title
+    </select>
+
+    <insert id="saveMessageBoard">
+        INSERT into message_board(topic_title, topic_owner, comment, comment_owner)
+        VALUES (#{topicTitle}, #{toppicOwner}, #{comment}, #{commentOwner})
+    </insert>
+
+    <select id="getMessageBoardList" resultMap="MessageBoardListMap">
+        SELECT *
+        FROM message_board
+        WHERE topic_title = #{title}
     </select>
 
 </mapper>
