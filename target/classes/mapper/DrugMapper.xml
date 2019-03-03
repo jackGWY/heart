@@ -61,5 +61,8 @@
         from dairy
         WHERE `user_name` = #{userName}
     </select>
+    <insert id="saveDrugInfo">
+        replace into drug_info(a1, a2, a3, a4 ,a5, a6, a7) VALUES (#{a1},#{a2},#{a3},#{a4},#{a5},#{a6},#{a7})
+    </insert>
 
 </mapper>

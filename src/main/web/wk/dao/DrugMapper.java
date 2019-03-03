@@ -18,4 +18,7 @@ public interface DrugMapper {
                    @Param("reason") String reason, @Param("drugUsed") String drugUsed,
                    @Param("hospital") String hospital);
     List<diary> getDiaryList(@Param("userName") String userName);
+
+    void saveDrugInfo(@Param("a1") String a1, @Param("a2") String a2, @Param("a3") String a3, @Param("a4") String a4,
+                        @Param("a5") String a5, @Param("a6") String a6, @Param("a7") String a7);
 }
