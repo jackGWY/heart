@@ -3,8 +3,8 @@
 <mapper namespace="wk.dao.SaveUserInfoMapper">
 
     <insert id="saveUser">
-        replace into user_patient(user_name,user_password,phone)
-        values(#{uname}, #{password},#{phone})
+        replace into user_patient(user_name,user_password,phone,user_type)
+        values(#{uname}, #{password},#{phone},#{userType})
     </insert>
     <select id="DoLogin" resultType="Integer">
         select count(*) from user_patient where user_name = #{uname} and user_password = #{password}

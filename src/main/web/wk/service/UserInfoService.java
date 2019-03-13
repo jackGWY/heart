@@ -10,8 +10,8 @@ public class UserInfoService {
     @Autowired(required = false)
     private SaveUserInfoMapper saveUserInfoMapper;
 
-    public void saveUserInfo( String phone,String uname,String regpass){
-        saveUserInfoMapper.saveUser(phone,uname,regpass);
+    public void saveUserInfo( String phone,String uname,String regpass, String userType){
+        saveUserInfoMapper.saveUser(phone,uname,regpass,userType);
     }
 
     public int doLogin(String uname,String regpass){
