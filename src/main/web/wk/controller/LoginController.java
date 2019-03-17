@@ -18,7 +18,7 @@ public class LoginController {
     private UserInfoService userInfoService;
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
-    public Map<String, Object> saveUserInfo(@RequestParam(value = "phone") String phone,@RequestParam(value = "uname")
+    public JSONObject saveUserInfo(@RequestParam(value = "phone") String phone,@RequestParam(value = "uname")
             String uname, @RequestParam(value = "regpass") String regpass, @RequestParam(value = "userType") String userType){
         System.out.println(phone+" "+uname+" "+regpass);
         userInfoService.saveUserInfo(phone,uname,regpass,userType);
