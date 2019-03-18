@@ -14,7 +14,7 @@ public interface SaveUserInfoMapper {
             @Result(property = "userPassword", column = "user_password"),
             @Result(property = "userType", column = "user_type")
     })
-    List<UserPatient> getDoctors(String userType);
+    List<UserPatient> getDoctors(@Param("userType")String userType);
 
     @Insert("REPLACE INTO relation(patient,doctor) values(#{patient},#{doctor})")
     int saveRelation(@Param("patient")String patient,@Param("doctor")String doctor);

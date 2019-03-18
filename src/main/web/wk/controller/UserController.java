@@ -17,9 +17,9 @@ public class UserController {
     @Autowired(required = false)
     private SaveUserInfoMapper saveUserInfoMapper;
     @RequestMapping(value = "/getDoctors")
-    public List<UserPatient> getDoctors(){
+    public List<UserPatient> getDoctors(@RequestParam(value = "userType") String userType){
         List<UserPatient> users = new ArrayList<>();
-        users=saveUserInfoMapper.getDoctors("doctor");
+        users=saveUserInfoMapper.getDoctors(userType);
         System.out.printf(users.toString());
         return users;
     }
