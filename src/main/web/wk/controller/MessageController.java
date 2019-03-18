@@ -21,8 +21,9 @@ public class MessageController {
     private MessageMapper messageMapper;
 
     @RequestMapping(value = "/save")
-    public JSONObject saveMessage(@RequestParam("patient") String patient, @RequestParam("message") String message, @RequestParam("doctor")String doctor){
-        int count=messageMapper.saveMessage(patient,message,doctor);
+    public JSONObject saveMessage(@RequestParam("patient") String patient, @RequestParam("message") String message,
+                                  @RequestParam("doctor")String doctor, @RequestParam("belong")String belong){
+        int count=messageMapper.saveMessage(patient,message,doctor,belong);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("count", count+"");
         System.out.println("count:" + count);
