@@ -16,8 +16,8 @@ public class FeelingController {
     private FeelingMapper feelingMapper;
     @RequestMapping(value = "/saveFeeling")
     public void saveFeeling(@RequestParam(value = "userName") String userName,@RequestParam(value = "sports") String sports,
-                            @RequestParam(value = "feeling") String feeling,@RequestParam(value = "bloodPressure") String bloodPressure,
-                            @RequestParam(value = "heartRate") String heartRate,@RequestParam(value = "remark") String remark){
+                            @RequestParam(value = "feeling") String feeling,@RequestParam(value = "bloodPressure") int bloodPressure,
+                            @RequestParam(value = "heartRate") int heartRate,@RequestParam(value = "remark") String remark){
         Feelings feelings = new Feelings();
         feelings.setUserName(userName);
         feelings.setSports(sports);
