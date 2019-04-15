@@ -38,6 +38,7 @@ public class IndexController {
         indexService.saveIndex(userName,age,sex,cp,trestbps,chol,fbs,restecg,thalach,exang,oldpeak,slop,ca,thal);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("result", "0");
+        System.out.printf("indexController \n");
         return jsonObject;
     }
 }

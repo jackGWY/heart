@@ -9,6 +9,22 @@ public class drugInfoResp {
     private String a6;
     private String a7;
 
+    public drugInfoResp() {
+    }
+
+    @Override
+    public String toString() {
+        return "drugInfoResp{" +
+                "a1='" + a1 + '\'' +
+                ", a2='" + a2 + '\'' +
+                ", a3='" + a3 + '\'' +
+                ", a4='" + a4 + '\'' +
+                ", a5='" + a5 + '\'' +
+                ", a6='" + a6 + '\'' +
+                ", a7='" + a7 + '\'' +
+                '}';
+    }
+
     public drugInfoResp(String a1, String a2, String a3, String a4, String a5, String a6, String a7) {
         this.a1 = a1;
         this.a2 = a2;

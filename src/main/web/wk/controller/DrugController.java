@@ -43,7 +43,10 @@ public class DrugController {
 
     @RequestMapping("/getDrugInfoByRandom")
     public drugInfoResp getDrugInfoByRandom(@RequestParam("a1") String a1) {
-        return drugService.getDrugInfoByRandom(a1);
+        drugInfoResp d = new drugInfoResp();
+        d=drugService.getDrugInfoByRandom(a1);
+        System.out.println(d.toString());
+        return d;
     }
 
     @RequestMapping("/getNews")

@@ -7,6 +7,6 @@
         values(#{uname}, #{password},#{phone},#{userType})
     </insert>
     <select id="DoLogin" resultType="Integer">
-        select count(*) from user_patient where user_name = #{uname} and user_password = #{password}
+        select count(*) from user_patient where user_name = #{uname} and user_password = #{password} and user_type = #{userType}
     </select>
 </mapper>

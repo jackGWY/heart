@@ -14,7 +14,7 @@ public class UserInfoService {
         saveUserInfoMapper.saveUser(phone,uname,regpass,userType);
     }
 
-    public int doLogin(String uname,String regpass){
-        return saveUserInfoMapper.DoLogin(uname,regpass);
+    public int doLogin(String uname,String regpass,String userType){
+        return saveUserInfoMapper.DoLogin(uname,regpass,userType);
     }
 }

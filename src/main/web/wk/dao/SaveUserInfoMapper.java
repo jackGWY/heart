@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface SaveUserInfoMapper {
     void saveUser(@Param("phone") String phone, @Param("uname") String uname,@Param("password") String password,@Param("userType") String userType);
-    int DoLogin(@Param("uname") String uname,@Param("password") String password);
+    int DoLogin(@Param("uname") String uname,@Param("password") String password,@Param("userType") String userType);
 
     @Select("SELECT user_name,user_password,phone,user_type from user_patient where user_type = #{userType}")
     @Results({@Result(property = "userName", column = "user_name"),

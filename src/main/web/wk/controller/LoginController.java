@@ -27,9 +27,9 @@ public class LoginController {
         return jsonObject;
     }
     @RequestMapping(value = "/doLogin")
-    public Map<String,Object> doLogin(@RequestParam(value = "uname") String uname, @RequestParam(value = "regpass") String regpass){
+    public Map<String,Object> doLogin(@RequestParam(value = "uname") String uname, @RequestParam(value = "regpass") String regpass, @RequestParam(value = "userType") String userType){
         System.out.println(" "+uname+" "+regpass);
-        int count=userInfoService.doLogin(uname,regpass);
+        int count=userInfoService.doLogin(uname,regpass,userType);
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("count", count+"");
         System.out.println("count:" + count);
