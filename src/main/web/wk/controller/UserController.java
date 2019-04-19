@@ -10,6 +10,7 @@ import wk.entity.UserPatient;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(value = "/user")
@@ -23,6 +24,22 @@ public class UserController {
         System.out.printf(users.toString());
         return users;
     }
+    @RequestMapping(value = "/getUserPatientByUserName")
+    public UserPatient getUserPatientByUserName(@RequestParam(value = "userName")String userName){
+        UserPatient user = new UserPatient();
+        user=saveUserInfoMapper.getUserPatientByUserName(userName);
+        System.out.printf(user.toString());
+        return user;
+    }
+    @RequestMapping(value = "/updateUserPatient")
+    public Map<String,Object> updateUserPatient(@RequestParam(value = "originName")String originName, @RequestParam(value = "userName")String userName, @RequestParam(value = "userPassword")String userPassword, @RequestParam(value = "phone")String phone){
+        System.out.printf("in updateUserPatient..........");
+        int count=saveUserInfoMapper.updateUserPatient(originName,userName,userPassword,phone);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("count", count+"");
+        System.out.println("count:" + count);
+        return jsonObject;
+    }
     @RequestMapping(value = "/saveRelation")
     public JSONObject saveRelation(@RequestParam("patient") String patient, @RequestParam("doctor") String doctor){
         int i = saveUserInfoMapper.saveRelation(patient,doctor);
@@ -31,4 +48,5 @@ public class UserController {
         System.out.printf("message:"+i);
         return jsonObject;
     }
+
 }
