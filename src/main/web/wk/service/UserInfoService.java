@@ -3,6 +3,9 @@ package wk.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import wk.dao.SaveUserInfoMapper;
+import wk.entity.UserPatient;
+
+import java.util.List;
 
 @Service
 public class UserInfoService {
@@ -16,5 +19,9 @@ public class UserInfoService {
 
     public int doLogin(String uname,String regpass,String userType){
         return saveUserInfoMapper.DoLogin(uname,regpass,userType);
+    }
+
+    public List<UserPatient> getUserNameList(){
+        return saveUserInfoMapper.getUserNameList();
     }
 }

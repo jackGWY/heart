@@ -28,4 +28,11 @@ public interface SaveUserInfoMapper {
 
     @Insert("REPLACE INTO relation(patient,doctor) values(#{patient},#{doctor})")
     int saveRelation(@Param("patient")String patient,@Param("doctor")String doctor);
+
+    @Select("SELECT user_name,user_password,phone,user_type from user_patient")
+    @Results({@Result(property = "userName", column = "user_name"),
+            @Result(property = "userPassword", column = "user_password"),
+            @Result(property = "userType", column = "user_type")
+    })
+    List<UserPatient> getUserNameList();
 }
