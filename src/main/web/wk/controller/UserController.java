@@ -32,12 +32,12 @@ public class UserController {
         return user;
     }
     @RequestMapping(value = "/updateUserPatient")
-    public Map<String,Object> updateUserPatient(@RequestParam(value = "originName")String originName, @RequestParam(value = "userName")String userName, @RequestParam(value = "userPassword")String userPassword, @RequestParam(value = "phone")String phone){
+    public JSONObject updateUserPatient(@RequestParam(value = "originName")String originName, @RequestParam(value = "userName")String userName, @RequestParam(value = "userPassword")String userPassword, @RequestParam(value = "phone")String phone){
         System.out.printf("in updateUserPatient..........");
         int count=saveUserInfoMapper.updateUserPatient(originName,userName,userPassword,phone);
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("count", count+"");
-        System.out.println("count:" + count);
+        jsonObject.put("count", String.valueOf(count));
+        System.out.println(" userController update count:" + count);
         return jsonObject;
     }
     @RequestMapping(value = "/saveRelation")
